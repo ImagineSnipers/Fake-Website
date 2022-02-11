@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Captcha</title>
+        <style>
+            h1 {
+                text-align: center;
+            }
+
+            .captcha {
+                display: block;
+                width: 125px;
+            }
+
+            #captchaExample {
+                border: solid black 4px;
+                display: flex;
+                justify-content: center;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            #captchaExample img {
+                width: 125px;
+                height: 125px;
+            }
+
+            #characterHolder {
+                display: flex;
+                justify-content: center;
+                border-collapse: collapse;
+                margin: 50px;
+            }
+
+            #characterHolder td {
+                border: dashed 2px black;
+                width: 125px;
+                height: 125px;
+            }
+
+            #captchaPieceContainer {
+                float: left;
+                position: absolute;
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+                margin-right: auto;
+                padding-right: 50px;
+                padding-left: 50px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                font-size: 16px;
+            }
+
+        </style>
+        <script>
+            var solution = ['y', 'r', 'a', 'g', 'j'];
+            shuffleArray(solution);
+
+            function drag(event) {
+                event.dataTransfer.setData("text", event.target.id);
+            }
+
+            function drop(event) {
+                if (event.target.nodeName != "IMG") {
+                    event.preventDefault();
+                    var data = event.dataTransfer.getData("text");
+                    event.target.appendChild(document.getElementById(data));
+                    solve();
+                }
+            }
+
+            function allow(event) {
+                event.preventDefault();
+            }
+
+            function solve() {
+                for (var i = 0; i < 5; i++) {
+                    var td = document.getElementById("td" + (i + 1));
+
+                    if (td.children.length <= 0) {
+                        return;
+                    }
+
+                    if (td.children[0].id != solution[i]) {
+                        return;
+                    }
+                    
+                }
+
+                alert("Congradulations you are a human");
+            }
+
+            function shuffleArray(array) {
+                for (var i = array.length - 1; i > 0; i--) {
+                
+                    // Generate random number
+                    var j = Math.floor(Math.random() * (i + 1));
+                                
+                    var temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+                    
+                return array;
+            }
+
+            function genCaptcha() {
+                var captchaExample = document.getElementById("captchaExample");
+                for (var i = 0; i < 5; i++) {
+                    var img = document.createElement("img");
+                    img.src = "images/captcha/" + solution[i] + ".jpg";
+                    captchaExample.appendChild(img);
+                }
+            }
+
+            function reset() {
+                window.location.reload(true);
+            }
+        </script>
+    </head>
+    <body onload="genCaptcha()"> 
+        <h1>Captcha</h1>
+
+        <div id="captchaExample"></div>
+
+        <div id="captchaPieceContainer" ondrop="drop(event)" ondragover="allow(event)">
+            <img id="a" class="captcha" src="images/captcha/a.jpg" draggable="true" ondragstart="drag(event)">
+            <img id="r" class="captcha" src="images/captcha/r.jpg" draggable="true" ondragstart="drag(event)">
+            <img id="g" class="captcha" src="images/captcha/g.jpg" draggable="true" ondragstart="drag(event)">
+            <img id="y" class="captcha" src="images/captcha/y.jpg" draggable="true" ondragstart="drag(event)">
+            <img id="j" class="captcha" src="images/captcha/j.jpg" draggable="true" ondragstart="drag(event)">
+        </div>
+
+        <table id="characterHolder">
+            <tr>
+                <td id="td1" ondragover="allow(event)" ondrop="drop(event)"></td>
+                <td id="td2" ondragover="allow(event)" ondrop="drop(event)"></td>
+                <td id="td3" ondragover="allow(event)" ondrop="drop(event)"></td>
+                <td id="td4" ondragover="allow(event)" ondrop="drop(event)"></td>
+                <td id="td5" ondragover="allow(event)" ondrop="drop(event)"></td>
+            </tr>
+        </table>
+
+        <button type="button" onclick="reset()">Reset</button>
+    </body>
+</html>
