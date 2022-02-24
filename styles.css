@@ -1,8 +1,19 @@
-body {
-	padding-right: 10%;
-	padding-left: 10%;
+nav {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	
+	background-color: gray;
+	color: white;
+	
+	padding-top: 0.75rem;
+	padding-right: 1rem;
+	padding-bottom: 0.75rem;
+	padding-left: 1rem;
 }
 
 nav a {
+	color: white;
 	padding: 5px;
 }
