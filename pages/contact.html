@@ -9,14 +9,32 @@
 		<link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#aaaaaa">
 		<meta name="msapplication-config" content="../favicons/browserconfig.xml" />
 		<link rel="stylesheet" href="../styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="../scripts/navbar.js"></script>
 	</head>
 	<body>
 		<nav>
 			<span>Dad Jokes</span>
 			<div style="float: right;">
 				<a href="../index.html">Home</a>
-				<a href="about.html">About</a>
-				<a href="contact.html">Contact</a>
+				<div class="hide main_menu">
+					<a href="about.html">About</a>
+					<div class="sub_menu">
+						<a href="#">Mission</a>
+						<a href="#">Project Source</a>
+						<a href="#">Submit Joke</a>
+					</div>
+				</div>
+				
+				<div class="animate main_menu">
+					<a href="contact.html">Contact</a>
+					<div class="sub_menu">
+						<a href="#">Phone#</a>
+						<a href="#">Email</a>
+						<a href="#">Social</a>
+					</div>
+				</div>
+				<a href="locations.html">Locations</a>
 			</div>
 		</nav>
 		

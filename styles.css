@@ -4,16 +4,39 @@ nav {
 	align-items: center;
 	justify-content: space-between;
 	
-	background-color: gray;
+	background-color: #282a35;
 	color: white;
 	
-	padding-top: 0.75rem;
 	padding-right: 1rem;
-	padding-bottom: 0.75rem;
 	padding-left: 1rem;
+	font-size: 17px;
 }
 
 nav a {
 	color: white;
-	padding: 5px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.main_menu {
+	display: inline-block;
+}
+
+.main_menu a {
+	display: block;
+}
+
+.sub_menu {
+	position: absolute;
+	display: none;
+	background-color: #282a35;
+}
+
+.sub_menu a {
+	display: block;
+	width: 100px;
+	padding-top: 12px;
+	padding-bottom: 12px;
 }
