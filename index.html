@@ -7,14 +7,23 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
 		<link rel="manifest" href="favicons/manifest.json">
 		<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#aaaaaa">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="msapplication-config" content="favicons/browserconfig.xml" />
 		<link rel="stylesheet" href="styles.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="scripts/navbar.js"></script>
+
+		<!-- Bootstrap core CSS -->
+		<link href="styles/bootstrap.min.css" rel="stylesheet">	
+		<link href="heroes.css" rel="stylesheet">
 	</head>
 	<body>
 		<nav>
-			<span>Dad Jokes</span>
+			<div id="navbar-icon">
+				<img src="favicons/safari-pinned-tab.svg" width="32px" />
+				<span>Dad Jokes</span>
+			</div>
 			<div style="float: right;">
 				<a href="index.html">Home</a>
 				<div class="hide main_menu">
@@ -37,7 +46,18 @@
 				<a href="pages/locations.html">Locations</a>
 			</div>
 		</nav>
-	
-		<h1>Dad Jokes?</h1>
+
+		<div class="px-4 py-5 my-5 text-center">
+			<img class="d-block mx-auto mb-4" src="favicons/safari-pinned-tab.svg" alt="" width="72" height="57">
+			<h1 class="display-5 fw-bold">Dad Jokes?</h1>
+			<div class="col-lg-6 mx-auto">
+				<p class="lead mb-4">Dad jokes are here to make the world a better place.</p>
+				<p class="lead mb-4">One dad joke at a time.</p>
+				<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+					<button type="button" class="btn btn-primary btn-lg px-4 gap-3">Learn More</button>
+					<button type="button" class="btn btn-outline-secondary btn-lg px-4">Contact</button>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

@@ -40,3 +40,12 @@ nav a {
 	padding-top: 12px;
 	padding-bottom: 12px;
 }
+
+#navbar-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 5px;
+	gap: 12px;
+	font-size: 18px;
+}
