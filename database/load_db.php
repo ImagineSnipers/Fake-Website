@@ -27,9 +27,9 @@
 	$sql .= "('Luke', 'Nielson', 'lukesmail@gmail.com', 'What did one pirate say to the other when he beat him at chess?', 'Checkmatey.', '2022-05-01 09:53:05'),";
 	$sql .= "('JOD', NULL, 'jodsmail@gmail.com', 'I broke my arm in two places.', 'My doctor told me to stop going to those places.', '2022-05-02 11:32:53'),";
 	$sql .= "('Emma', 'Anderson', 'emmasmail@gmail.com', 'I used to work at a soft drink can crushing company...', 'it was soda pressing.', '2022-04-29 08:35:22'),";
-	$sql .= "('Parker', 'Anderson', 'parkersmail@gmial.com', 'Needs a lot of work, maybe Ill finish it.', '2022-04-28 12:53:12'),";
-	$sql .= "('Daryl', 'Anderson', 'darylsmail@gmail.com', 'Dad jokes are great.', '2022-04-29 09:45:33'),";
-	$sql .= "('Parker', 'Anderson', 'parkersmail@gmail.com', 'Cant agree more.', '2022-04-30 10:23:59'),";
+	$sql .= "('Parker', 'Anderson', 'parkersmail@gmail.com', 'What kind of music do astronauts listen to?', 'Neptunes.', '2022-04-28 12:53:12'),";
+	$sql .= "('Daryl', 'Anderson', 'darylsmail@gmail.com', 'Rest in peace, boiled water.', 'You will be mist.', '2022-04-29 09:45:33'),";
+	$sql .= "('Parker', 'Anderson', 'parkersmail@gmail.com', 'What’s Forrest Gump’s password?', '1forrest1', '2022-04-30 10:23:59'),";
 	$sql .= "('Carson', 'Swain', 'carsonsmail@gmail.com', 'Dad jokes go brrr', '2022-04-28 11:23:50'),";
 	$sql .= "('JOD', NULL, 'jodsmail@gmail.com', 'JOD agrees.', 1, 0, '2022-04-28 12:45:32'),";
 	$sql .= "('Connor', 'Snow', 'connorsemail@gmail.com', 'But can it play Goldeneye?', 0, 0, '2022-04-29 10:12:32'),";
