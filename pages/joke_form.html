@@ -1,28 +1,66 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Dad Jokes - Home</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+		<link rel="manifest" href="favicons/manifest.json">
+		<link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#aaaaaa">
+		<meta name="msapplication-config" content="favicons/browserconfig.xml" />
+		<link rel="stylesheet" href="../styles.css">
+
+        <link href="../styles/bootstrap.min.css" rel="stylesheet">
+        <link href="../styles/headers.css" rel="stylesheet">
+		<link href="../styles/heroes.css" rel="stylesheet">
+		<link href="../styles/features.css" rel="stylesheet">
     </head>
     <body>
-        <h1>Joke Submission Form</h1>
+        <div class="container">
+			<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+			  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+				<svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+				<span class="fs-4">Dad Jokes</span>
+			  </a>
+		
+			  <ul class="nav nav-pills">
+				<li class="nav-item"><a href="../pages/home.html" class="nav-link">Home</a></li>
+				<li class="nav-item"><a href="../pages/about.html" class="nav-link">About</a></li>
+				<li class="nav-item"><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+				<li class="nav-item"><a href="../pages/locations.html" class="nav-link">Locations</a></li>
+			  </ul>
+			</header>
+		</div>
+        <div class="container">
+            <h2>Joke Submission Form</h2>
 
-        <form method="post" action="../database/submit_form.php">
-            <label>First name:
-                <input name="first" type="text" maxlength="20">
-            </label>
-            <label>Last name:
-                <input name="last" type="text" maxlength="20"><br>
-            </label>
-            <label>Email: 
-                <input name="email" type="email" maxlength="40"><br>
-            </label>
-            <label>Joke Question: 
-                <textarea name="jokequestion"></textarea>
-            </label>
-            <label>Joke Answer:
-                <textarea name="jokeanswer"></textarea><br>
-            </label>
+            <form class="form-horizontal" method="post" action="../database/submit_form.php">
+                <div class="form-group">
+                    <label class="sr-only">First name:</label>
+                    <input name="first" type="text" class="form-control" maxlength="20" placeholder="John" />
+                </div>
+                <div class="form-group">
+                    <label class="sr-only">Last name:</label>
+                    <input name="last" type="text" class="form-control" maxlength="20" placeholder="Doe" />
+                </div>
+                
+                <div class="form-group">
+                    <label class="sr-only">Email:</label>
+                    <input name="email" type="email" class="form-control" maxlength="40" placeholder="johndoe@example.com" />
+                </div>
 
-            <input type="submit">
-        </form>
+                <div class="form-group">
+                    <label class="sr-only">Joke Question:</label>
+                    <textarea name="jokequestion" class="form-control" placeholder="Intersting question"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only">Joke Answer:</label><br>
+                    <textarea name="jokeanswer" class="form-control" placeholder="Halarious or clever answer"></textarea><br>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </body>
 </html>
