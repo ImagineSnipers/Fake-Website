@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Joke Submission Form</h1>
+
+        <form method="post" action="../database/submit_form.php">
+            <label>First name:
+                <input name="first" type="text" maxlength="20">
+            </label>
+            <label>Last name:
+                <input name="last" type="text" maxlength="20"><br>
+            </label>
+            <label>Email: 
+                <input name="email" type="email" maxlength="40"><br>
+            </label>
+            <label>Joke Question: 
+                <textarea name="jokequestion"></textarea>
+            </label>
+            <label>Joke Answer:
+                <textarea name="jokeanswer"></textarea><br>
+            </label>
+
+            <input type="submit">
+        </form>
+    </body>
+</html>
