@@ -28,16 +28,49 @@
 				$con = openCon();
 			?>
 
-			var joke_questions = "<?php 
+			var jokeQuestions = [<?php
+				$values = array();
+
 				$sql = "SELECT JokeQuestion FROM JokeSuggestions;";
 				$query = mysqli_query($con, $sql);
-				$value_array = array();
-				//while($row = mysql_fetch_array($query)){
-				//	$value_array[] = $row['JokeQuestion'];
-				//}
-				//$collection = implode(", ", $value_array);
-				//echo $collection;
-			?>");
+				$size = mysqli_num_fields($query);
+				
+				while ($row = mysqli_fetch_array($query)) {
+					for ($i = 0; $i < $size; $i++) 
+						$html = $row[0];
+						$html_formated = "'$html',";
+						echo str_replace("'", "\"", $html_formated); // very hacky i know this all sucks
+				}
+			?>];
+			console.log(jokeQuestions);
+
+			var jokeAnswers = [<?php
+				$values = array();
+
+				$sql = "SELECT JokeAnswer FROM JokeSuggestions;";
+				$query = mysqli_query($con, $sql);
+				$size = mysqli_num_fields($query);
+				
+				while ($row = mysqli_fetch_array($query)) {
+					for ($i = 0; $i < $size; $i++) 
+						$html = $row[0];
+						$html_formated = "'$html',";
+						echo str_replace("'", "\"", $html_formated); // very hacky i know this all sucks
+				}
+			?>];
+			console.log(jokeAnswers);
+
+			var jokeQuestionElement = document.getElementById("joke-question");
+			var jokeAnswerElement = document.getElementById("joke-answer");
+			var inst = setInterval(updateJoke, 2500);
+
+			function updateJoke() {
+				var index = Math.floor(Math.random() * jokeQuestions.length);
+				document.getElementById("joke-question").textContent = jokeQuestions[index];
+				document.getElementById("joke-answer").textContent = jokeAnswers[index];
+				//alert(jokeQuestions[2] + "\n" + jokeAnswers[0]);
+			}
+			
 		</script>
 	</head>
 	<body>
