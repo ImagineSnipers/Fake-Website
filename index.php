@@ -20,9 +20,7 @@
 		<link href="styles/heroes.css" rel="stylesheet">
 		<link href="styles/features.css" rel="stylesheet">
 		
-		<script>
-			alert("HAAA");
-		
+		<script>		
 			<?php
 				include "database/connection.php";
 				$con = openCon();
@@ -96,7 +94,7 @@
 			<div class="col-lg-6 mx-auto">
 				<div class="pt-3 pb-4">
 					<p id="joke-question" class="lead h3">I broke my arm in two places.</p>
-					<p id="joke-answer" class="lead h2"><strong>My doctor told me to stop going to those places.</strong></p>
+					<p class="lead h2"><strong id="joke-answer">My doctor told me to stop going to those places.</strong></p>
 				</div>
 				<div class="d-grid gap-2 d-sm-flex justify-content-sm-center pb-3">
 					<a href="pages/joke_form.html" class="btn btn-primary btn-lg px-4 gap-3" role="button">Submit Joke</a>
