@@ -62,7 +62,7 @@
 
 			var jokeQuestionElement = document.getElementById("joke-question");
 			var jokeAnswerElement = document.getElementById("joke-answer");
-			var inst = setInterval(updateJoke, 2500);
+			var inst = setInterval(updateJoke, 3000);
 
 			function updateJoke() {
 				var index = Math.floor(Math.random() * jokeQuestions.length);
