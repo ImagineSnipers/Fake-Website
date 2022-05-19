@@ -36,6 +36,7 @@
 				while ($row = mysqli_fetch_array($query)) {
 					for ($i = 0; $i < $size; $i++) 
 						$html = $row[0];
+						$html = str_replace("&quot;", "\'", $html);
 						$html_formated = "'$html',";
 						echo str_replace("'", "\"", $html_formated); // very hacky i know this all sucks
 				}
@@ -52,6 +53,7 @@
 				while ($row = mysqli_fetch_array($query)) {
 					for ($i = 0; $i < $size; $i++) 
 						$html = $row[0];
+						$html = str_replace("&quot;", "\'", $html);
 						$html_formated = "'$html',";
 						echo str_replace("'", "\"", $html_formated); // very hacky i know this all sucks
 				}
